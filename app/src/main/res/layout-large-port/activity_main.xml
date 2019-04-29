@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayoutLarge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="horizontal"
+    tools:context="com.pocketoracle.mallo.pokedex.MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".3"
+        android:orientation="vertical">
+
+        <fragment
+            android:name="com.pocketoracle.mallo.pokedex.TypesListFragment"
+            android:id="@+id/listFrag"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            tools:layout="@layout/fragment_types_list"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Select a Pokémon:"
+                android:id="@+id/tvSelect"
+                android:layout_gravity="center_horizontal|top"/>
+            <FrameLayout
+                android:id="@+id/pokemonFragHook"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/detailsFragHook"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".7">
+
+    </FrameLayout>
+</LinearLayout>
